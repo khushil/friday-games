@@ -1,0 +1,23 @@
+# Godot
+.godot/
+*.import
+
+# .NET
+bin/
+obj/
+*.dll
+*.pdb
+*.exe
+
+# IDE
+.vs/
+.vscode/
+*.user
+*.suo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Serena
+.serena/
