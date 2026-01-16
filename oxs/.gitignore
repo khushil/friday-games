@@ -1,0 +1,72 @@
+# Godot 4.x
+.godot/
+
+# Godot-specific ignores
+*.translation
+
+# Imported resources (Godot regenerates these)
+.import/
+
+# Export templates and builds
+export/
+export_presets.cfg.backup
+
+# Mono/C# build artifacts
+.mono/
+*.csproj.user
+*.sln.user
+
+# .NET build output
+**/bin/
+**/obj/
+
+# NuGet
+*.nupkg
+.nuget/
+packages/
+
+# IDE - Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# IDE - JetBrains Rider
+.idea/
+*.sln.iml
+
+# IDE - Visual Studio Code
+.vscode/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*~
+
+# Work tracking directories (prompt internal state)
+.work/
+
+# Test results
+TestResults/
+*.trx
+
+# Coverage reports
+coverage/
+*.coverage
+*.coveragexml
