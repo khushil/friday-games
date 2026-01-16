@@ -102,7 +102,8 @@ public partial class MainMenu : Control
             GetNode<Button>("VBoxContainer/LocalButton"),
             GetNode<Button>("VBoxContainer/EasyAIButton"),
             GetNode<Button>("VBoxContainer/MediumAIButton"),
-            GetNode<Button>("VBoxContainer/HardAIButton")
+            GetNode<Button>("VBoxContainer/HardAIButton"),
+            GetNode<Button>("VBoxContainer/MultiplayerButton")
         };
 
         foreach (var button in buttons)
@@ -115,6 +116,28 @@ public partial class MainMenu : Control
         buttons[1].Pressed += () => StartGame(GameMode.VsAI, AIDifficulty.Easy);
         buttons[2].Pressed += () => StartGame(GameMode.VsAI, AIDifficulty.Medium);
         buttons[3].Pressed += () => StartGame(GameMode.VsAI, AIDifficulty.Hard);
+        buttons[4].Pressed += OnMultiplayerPressed;
+    }
+
+    private void OnMultiplayerPressed()
+    {
+        GD.Print("[MainMenu] Opening multiplayer menu");
+
+        // Fade out transition before loading scene
+        var tween = CreateTween();
+        tween.TweenProperty(this, "modulate:a", 0.0f, GameTheme.Animation.SceneTransition);
+        tween.TweenCallback(Callable.From(LoadMultiplayerMenu));
+    }
+
+    private void LoadMultiplayerMenu()
+    {
+        var scene = GD.Load<PackedScene>("res://Presentation/Scenes/MultiplayerMenu.tscn");
+        if (scene == null)
+        {
+            GD.PrintErr("[MainMenu] Failed to load MultiplayerMenu.tscn!");
+            return;
+        }
+        GetTree().ChangeSceneToPacked(scene);
     }
 
     private void StyleButton(Button button)

@@ -46,6 +46,10 @@ text = "vs Medium AI"
 layout_mode = 2
 text = "vs Hard AI"
 
+[node name="MultiplayerButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Multiplayer"
+
 [node name="BoardSizeLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 horizontal_alignment = 1
